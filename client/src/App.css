@@ -1,0 +1,47 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  padding: 40px 20px 20px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.app-header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn-tv {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-tv:hover {
+  background: #ee5a52;
+  transform: translateY(-2px);
+}
