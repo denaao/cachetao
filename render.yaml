@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: cachetao-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    rootDir: server
+
+  - type: static
+    name: cachetao-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    rootDir: client
+    headers:
+      - path: /
+        name: Cache-Control
+        value: public, max-age=3600
