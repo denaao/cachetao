@@ -1,22 +1,30 @@
 services:
   - type: web
     name: cachetao-backend
-    env: node
-    region: oregon
-    plan: free
+    runtime: node
+    repo: https://github.com/denaao/cachetao
+    branch: main
+    rootDir: server
     buildCommand: npm install
     startCommand: npm start
+    plan: free
+    region: oregon
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-    rootDir: server
+      - key: FRONTEND_URL
+        value: https://cachetao-frontend.onrender.com
 
   - type: web
     name: cachetao-frontend
-    env: static
-    plan: free
+    runtime: static
+    repo: https://github.com/denaao/cachetao
+    branch: main
+    rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
-    rootDir: client
+    envVars:
+      - key: VITE_API_URL
+        value: https://cachetao-backend.onrender.com
