@@ -30,13 +30,12 @@ function App() {
     }
   };
 
-  const handleRoundResult = (winner, loser, otherPlayers) => {
+  const handleRoundResult = (participants, winner) => {
     if (socket && gameState) {
       socket.emit('round-result', {
         gameId: gameState.id,
-        winner,
-        loser,
-        otherPlayers
+        participants,
+        winner
       });
     }
   };

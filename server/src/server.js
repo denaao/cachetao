@@ -105,10 +105,10 @@ io.on('connection', (socket) => {
   });
 
   socket.on('round-result', (data) => {
-    const { gameId, winner, loser, otherPlayers } = data;
+    const { gameId, participants, winner } = data;
     console.log(`⚡ Round result received for game ${gameId}`);
     
-    const game = gameController.processRound(gameId, winner, loser, otherPlayers);
+    const game = gameController.processRound(gameId, participants, winner);
     
     if (game) {
       io.to(`game-${gameId}`).emit('game-state', game);

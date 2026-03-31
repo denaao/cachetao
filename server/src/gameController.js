@@ -27,36 +27,32 @@ export class GameController {
     return game;
   }
 
-  processRound(gameId, winnerId, loserId, otherPlayerIds) {
+  processRound(gameId, participantIds, winnerId) {
     const game = this.games.get(gameId);
     if (!game) return null;
 
-    // Find players by ID
-    const winner = game.players.find((p) => p.id === winnerId);
-    const loser = game.players.find((p) => p.id === loserId);
+    const activeParticipants = game.players.filter(
+      (player) => participantIds.includes(player.id) && player.status === 'active'
+    );
+    const winner = activeParticipants.find((player) => player.id === winnerId);
 
-    if (!winner || !loser) return null;
+    if (!winner || activeParticipants.length < 2) return null;
 
-    // Apply scoring rules:
-    // Winner keeps points (no change)
-    // Loser loses 2 points
-    // Other players lose 1 point each
-
-    // Winner: mantém pontos
-    // (não faz nada, já mantém)
-
-    // Loser: perde 2 pontos
-    loser.points = Math.max(0, loser.points - 2);
-
-    // All other active players lose 1 point
     game.players.forEach((player) => {
-      if (
-        player.id !== winnerId &&
-        player.id !== loserId &&
-        player.status === 'active'
-      ) {
-        player.points = Math.max(0, player.points - 1);
+      if (player.status !== 'active') {
+        return;
       }
+
+      if (player.id === winnerId) {
+        return;
+      }
+
+      if (participantIds.includes(player.id)) {
+        player.points = Math.max(0, player.points - 2);
+        return;
+      }
+
+      player.points = Math.max(0, player.points - 1);
     });
 
     // Update statuses (who's still alive)

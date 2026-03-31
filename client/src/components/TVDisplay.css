@@ -57,33 +57,37 @@
   padding: 40px;
   overflow-y: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .tv-placar {
   width: 100%;
-  max-width: 1400px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .tv-player-card {
   background: rgba(255, 255, 255, 0.05);
   border: 3px solid rgba(102, 126, 234, 0.3);
   border-radius: 16px;
-  padding: 30px;
-  text-align: center;
+  padding: 28px 30px 28px 88px;
+  text-align: left;
   position: relative;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .tv-player-card:hover {
   background: rgba(102, 126, 234, 0.1);
   border-color: #667eea;
-  transform: translateY(-10px);
+  transform: translateX(10px);
 }
 
 .tv-player-card.leader {
@@ -124,22 +128,29 @@
 }
 
 .player-details {
-  margin: 10px 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 1;
 }
 
 .tv-player-name {
-  font-size: 42px;
-  margin: 15px 0;
+  font-size: 38px;
+  margin: 0;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .tv-player-points {
-  font-size: 72px;
+  font-size: 64px;
   font-weight: bold;
   color: #667eea;
-  margin: 20px 0;
+  margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  min-width: 110px;
+  text-align: right;
 }
 
 .tv-player-card.leader .tv-player-points {
@@ -149,7 +160,7 @@
 
 .status-indicator {
   font-size: 48px;
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .tv-player-card.eliminated .status-indicator {
@@ -175,11 +186,6 @@
     font-size: 24px;
   }
 
-  .tv-placar {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
   .tv-player-name {
     font-size: 32px;
   }
@@ -198,9 +204,15 @@
     font-size: 18px;
   }
 
-  .tv-placar {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .tv-player-card {
+    padding: 22px 20px 22px 72px;
+    align-items: flex-start;
+  }
+
+  .player-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .tv-player-name {
@@ -209,6 +221,7 @@
 
   .tv-player-points {
     font-size: 42px;
+    text-align: left;
   }
 
   .tv-footer {

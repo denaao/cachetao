@@ -107,9 +107,9 @@ export default function GameSetup({ onGameCreated, apiUrl }) {
           <h3>Regras Rápidas:</h3>
           <ul>
             <li>💰 Cada jogador começa com <strong>10 pontos</strong></li>
-            <li>✅ Quem bate e ganha: <strong>mantém os pontos</strong></li>
-            <li>❌ Quem bate e perde: <strong>-2 pontos</strong></li>
-            <li>👥 Quem não bate: <strong>-1 ponto</strong></li>
+            <li>✅ Quem vai e ganha: <strong>mantém os pontos</strong></li>
+            <li>❌ Quem vai e perde: <strong>-2 pontos</strong></li>
+            <li>👥 Quem não vai: <strong>-1 ponto</strong></li>
             <li>🏆 Ganha quem sobrar vivo</li>
           </ul>
         </div>
