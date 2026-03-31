@@ -1,0 +1,101 @@
+.game-setup {
+  padding: 20px;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.player-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.player-input-group input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.btn-remove {
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-remove:hover {
+  background: #e53e3e;
+}
+
+.btn-secondary {
+  background: #67a3e0;
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-secondary:hover {
+  background: #4a8abf;
+}
+
+.btn-large {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c53030;
+}
+
+.rules {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.rules h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.rules ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rules li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.rules li:last-child {
+  border-bottom: none;
+}
+
+.rules strong {
+  color: #667eea;
+}
